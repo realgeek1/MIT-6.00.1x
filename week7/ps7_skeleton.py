@@ -185,12 +185,13 @@ def get_adopters_for_advertisement(adoption_center, list_of_adopters, n):
     """
     The function returns a list of the top n scoring Adopters from list_of_adopters (in numerical order of score)
     """
-    dict1 = {}
-    for a in list_of_adopters:
-        dict1[a] = a.get_score(adoption_center)
-    sorted_ls = sorted(dict1.items(), key=operator.itemgetter(1),reverse=True)
-    ls = []
-    for x in sorted_ls:
-        ls.append(x[0])
-    del ls[n:]
-    return ls
+	sorted(list_of_adopters, key=lambda:get_score(self,adoption_center))
+    # dict1 = {}
+    # for a in list_of_adopters:
+        # dict1[a] = a.get_score(adoption_center)
+    # sorted_ls = sorted(dict1.items(), key=operator.itemgetter(1),reverse=True)
+    # ls = []
+    # for x in sorted_ls:
+        # ls.append(x[0])
+    # del ls[n:]
+    # return ls
